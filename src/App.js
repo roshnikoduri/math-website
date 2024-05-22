@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from '@testing-library/react';
 import axios from 'axios';
 import Loading from './Loading';
+import professional_headshot from './professional_headshot.png'
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +33,33 @@ class App extends Component {
           888Math is a tutoring website that connects students in America with teachers in India for only $8.88 an hour. 
           We provide high-quality, problem-focused tutoring. 
         </p>
+
+        <figure style={{ textAlign: 'left' }} >
+        <img src={professional_headshot}
+        alt="Headshot"
+        style={{ width: '300px', height: '200px' }} />
+        </figure>
+        <figcaption style = {{ textAlign: 'left'}}> Professional Headshot
+        </figcaption>
+
+        <figure style={{ textAlign: 'center' }} >
+        <img src={professional_headshot}
+        alt="Headshot"
+        style={{ width: '300px', height: '200px' }} />
+        </figure>
+        <figcaption style = {{ textAlign: 'center'}}> Professional Headshot
+        </figcaption>
+
+        <figure style={{ textAlign: 'right' }} >
+        <img src={professional_headshot}
+        alt="Headshot"
+        style={{ width: '300px', height: '200px' }} />
+        </figure>
+        <figcaption style = {{ textAlign: 'right'}}> Professional Headshot
+        </figcaption>
+
+
+        
       </div>
     );
   }
