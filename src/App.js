@@ -3,6 +3,18 @@ import { render } from '@testing-library/react';
 import axios from 'axios';
 import Loading from './Loading';
 import professional_headshot from './professional_headshot.png'
+import Navbar from "./Components/NavBar";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import Home from "./pages/home";
+import Contact from "./pages/contact";
+import Schedule from "./pages/schedule";
+import BecomeATutor from "./pages/becomeatutor";
+
 
 class App extends Component {
   constructor(props) {
@@ -16,54 +28,54 @@ class App extends Component {
     this.setState({ showInfo: true });
   }
 
+  render(){
+    return (
+      <Router>
+          <Navbar />
+          <Routes>
+              
+              <Route path= "/home" element = {<Home />} />
+              <Route path="/schedule" element={<Schedule />} />
+              <Route
+                  path="/becomeatutor"
+                  element={<BecomeATutor />}
+              />
+              <Route
+                  path="/contact"
+                  element={<Contact/>}
+              />
+          </Routes>
+      </Router>
+    );
+  }
+
+}
+
+export default App;
+
+
+
   // aboutSection = () => {
   //   return{
   //     "888Math is a tutoring website that connects students in America with teachers in India for only $8.88 an hour. We provide high-quality, problem-focused tutoring. "
   //   };
   // }
 
-  render() {
-    return (
-      <div className="App">
-        <h2 style={{ color: 'red' }}>Welcome to 888Math!</h2>
-        <button onClick={this.displayInfo}>Contact Information</button>
-        {this.state.showInfo && <h3>Email: hganesh@umich.edu</h3>}
-        <hr />
-        <p>
-          888Math is a tutoring website that connects students in America with teachers in India for only $8.88 an hour. 
-          We provide high-quality, problem-focused tutoring. 
-        </p>
-
-        <figure style={{ textAlign: 'left' }} >
-        <img src={professional_headshot}
-        alt="Headshot"
-        style={{ width: '300px', height: '200px' }} />
-        </figure>
-        <figcaption style = {{ textAlign: 'left'}}> Professional Headshot
-        </figcaption>
-
-        <figure style={{ textAlign: 'center' }} >
-        <img src={professional_headshot}
-        alt="Headshot"
-        style={{ width: '300px', height: '200px' }} />
-        </figure>
-        <figcaption style = {{ textAlign: 'center'}}> Professional Headshot
-        </figcaption>
-
-        <figure style={{ textAlign: 'right' }} >
-        <img src={professional_headshot}
-        alt="Headshot"
-        style={{ width: '300px', height: '200px' }} />
-        </figure>
-        <figcaption style = {{ textAlign: 'right'}}> Professional Headshot
-        </figcaption>
-
-
+  // render() {
+  //   return (
+  //     <div className="App">
+  //       <h2 style={{ color: 'red' }}>Welcome to 888Math!</h2>
+  //       <button onClick={this.displayInfo}>Contact Information</button>
+  //       {this.state.showInfo && <h3>Email: hganesh@umich.edu</h3>}
+  //       <hr />
+  //       <p>
+  //         888Math is a tutoring website that connects students in America with teachers in India for only $8.88 an hour. 
+  //         We provide high-quality, problem-focused tutoring. 
+  //       </p>
         
-      </div>
-    );
-  }
-}
+  //     </div>
+  //   );
+  // }
 
 // class App extends Component{
 //   constructor(props){
@@ -135,4 +147,4 @@ class App extends Component {
 //props = properties
 //<hr> = horizontal line
 
-export default App;
+
